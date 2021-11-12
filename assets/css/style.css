@@ -1,0 +1,89 @@
+#myForm{
+  
+  padding:10px;
+  width: 300px;
+  height:250px;
+  position:absolute;
+  top:20%;
+  left:30%;
+  background-color:whitesmoke;
+
+}
+.form-popup {
+    display: none;
+   border: 2px solid black;
+  border-radius: 10px;
+  }
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+  
+  }
+ 
+  
+   label{
+      padding: 5px;
+      color:black;
+      position:relative;
+      text-align: left;
+
+  }
+ 
+
+  .filter{
+    position:relative;
+    padding: 10px;
+   
+   }
+
+  .filter table{
+   margin-top: 30px;
+  width:100%;
+    background-color: white;
+    text-align: center;
+    overflow:hidden;
+    border-radius:10px;
+  }
+
+  .filter thead{
+    background:violet;
+    text-transform: uppercase;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+  }
+   #forms td{
+    font-family: 'Lucida Sans',  'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: capitalize;
+
+  }
+
+  .eye {
+    position: relative;
+  }
+
+  .eye span {
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    cursor: pointer;
+  }
+
+  .eye span i {
+    font-size: 20px;
+  }
+  .eyes {
+    position: relative;
+  }
+
+  .eyes span {
+    position: absolute;
+    right: 10px;
+    top: 40px;
+    cursor: pointer;
+  }
+
+  .eyes span i {
+    font-size: 20px;
+  }
+ 

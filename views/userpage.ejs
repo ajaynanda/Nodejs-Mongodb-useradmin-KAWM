@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Login page</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/uploads/index.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700"
+    />
+
+    <link
+      href="/plugins/custom/fullcalendar/fullcalendar.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <link
+      href="/plugins/global/plugins.bundle.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/fontawesome.min.css"
+    />
+    <style>
+      .eye {
+        position: relative;
+      }
+      .eye span {
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        cursor: pointer;
+      }
+      .eye span i {
+        font-size: 20px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="d-flex flex-column flex-root">
+      <div
+        class="
+          d-flex
+          flex-column flex-column-fluid
+          bgi-position-y-bottom
+          position-x-center
+          bgi-no-repeat bgi-size-contain bgi-attachment-fixed
+        "
+      >
+        <div
+          class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20"
+        >
+          <a href="" class="mb-12">
+            <img
+              class="mt-2"
+              alt="logo"
+              src="uploads/index.png"
+              width="120px"
+              height="30px"
+            />
+          </a>
+          <div
+            class="w-lg-500px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto"
+          >
+            <ul>
+              <% if (messages.error){ %>
+              <h5 class="alert alert-danger"><%=messages.error %></h5>
+              <% } %>
+            </ul>
+            <form id="form" class="form w-100" action="/login" method="POST">
+              <div class="text-center mb-10">
+                <h1 class="text-dark mb-3">User Log In</h1>
+                <a style="color: whitesmoke" href="/admins">Admin login</a>
+                <div id="error"></div>
+                <div class="fv-row mb-10">
+                  <div class="d-flex flex-stack mb-2">
+                    <label class="form-label fs-6 fw-bolder text-dark"
+                      >Mobile</label
+                    >
+                  </div>
+                  <div>
+                    <input
+                      class="form-control form-control-lg form-control-solid"
+                      id="mobile"
+                      type="text"
+                      name="mobile"
+                      autocomplete="off"
+                    />
+                  </div>
+                </div>
+
+                <div class="fv-row mb-10">
+                  <div class="d-flex flex-stack mb-2">
+                    <label class="form-label fw-bolder text-dark fs-6 mb-0"
+                      >Password</label
+                    >
+                    <a href="/forgot" class="link-primary fs-6 fw-bolder"
+                      >Forgot Password ?</a
+                    >
+                  </div>
+                  <div class="eye">
+                    <input
+                      class="form-control form-control-lg form-control-solid"
+                      id="password"
+                      type="password"
+                      name="password"
+                      autocomplete="off"
+                    />
+                    <span>
+                      <i
+                        class="fas fa-eye"
+                        aria-hidden="true"
+                        id="eye"
+                        onclick="toggle()"
+                      ></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    id="kt_sign_in_submit"
+                    class="btn btn-lg btn-primary w-100 mb-5"
+                  >
+                    <span class="indicator-label">Submit</span>
+                    <span class="indicator-progress">Please wait...</span>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script src="/js/custom/authentication/sign-in/general.js"></script>
+<script src="assets/plugins/global/plugins.bundle.js"></script>
+<script src="assets/js/scripts.bundle.js"></script>
+<script>
+  var state = false;
+  function toggle() {
+    if (state) {
+      document.getElementById("password").setAttribute("type", "password");
+      state = false;
+      document.getElementById("eye").style.color = "dark grey";
+    } else {
+      document.getElementById("password").setAttribute("type", "text");
+      state = true;
+      document.getElementById("eye").style.color = "grey";
+    }
+  }
+</script>

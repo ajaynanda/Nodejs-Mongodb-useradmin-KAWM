@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update status Enquiry</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/index.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+
+
+    <link rel="shortcut icon" href="/uploads/index.png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+
+
+
+
+
+    <link href="/css/style.bundle.css" rel="stylesheet" type="text/css" />
+
+    <style>
+        #status {
+
+            padding: 8px;
+            color: #000;
+            font-size: 14px;
+            background: white;
+        }
+
+        option {
+            background-color: rgb(214, 214, 179);
+        }
+    </style>
+</head>
+
+<body id="kt_body"
+    class="header-fixed header-tablet-and-mobile-fixed toolbar-enabled toolbar-fixed aside-enabled aside-fixed"
+    style="--kt-toolbar-height:55px;--kt-toolbar-height-tablet-and-mobile:55px">
+<div class="row">
+        <div class="wrapper d-flex flex-column flex-row-fluid" id="kt_wrapper">
+            <div id="kt_header" class="header align-items-stretch">
+                <div class="container-fluid d-flex align-items-stretch justify-content-between">
+                    <div class="d-flex align-items-center d-lg-none ms-n3 me-1" title="Show aside menu">
+                        <div class="btn btn-icon btn-active-light-primary w-30px h-30px w-md-40px h-md-40px"
+                            id="kt_aside_mobile_toggle">
+                            <span class="svg-icon svg-icon-2x mt-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path
+                                        d="M21 7H3C2.4 7 2 6.6 2 6V4C2 3.4 2.4 3 3 3H21C21.6 3 22 3.4 22 4V6C22 6.6 21.6 7 21 7Z"
+                                        fill="black" />
+                                    <path opacity="0.3"
+                                        d="M21 14H3C2.4 14 2 13.6 2 13V11C2 10.4 2.4 10 3 10H21C21.6 10 22 10.4 22 11V13C22 13.6 21.6 14 21 14ZM22 20V18C22 17.4 21.6 17 21 17H3C2.4 17 2 17.4 2 18V20C2 20.6 2.4 21 3 21H21C21.6 21 22 20.6 22 20Z"
+                                        fill="black" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-stretch justify-content-between flex-lg-grow-1">
+                        <div class="d-flex align-items-stretch" id="kt_header_nav">
+                            <div class="header-menu align-items-stretch" data-kt-drawer="true"
+                                data-kt-drawer-name="header-menu" data-kt-drawer-activate="{default: true, lg: false}"
+                                data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}"
+                                data-kt-drawer-direction="end" data-kt-drawer-toggle="#kt_header_menu_mobile_toggle"
+                                data-kt-swapper="true" data-kt-swapper-mode="prepend"
+                                data-kt-swapper-parent="{default: '#kt_body', lg: '#kt_header_nav'}">
+                                <div class="menu menu-lg-rounded menu-column menu-lg-row menu-state-bg menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-400 fw-bold my-5 my-lg-0 align-items-stretch"
+                                    id="#kt_header_menu" data-kt-menu="true">
+                                    <div class="menu-item me-lg-1">
+                                        <a class="menu-link active py-3" href="/adminpage">
+                                            <span class="menu-title">Admin Dashboard</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <form action="/logoutadmin" method="GET">
+                                <button style="margin-left: 800px" type="submit" class="btn btn-danger btn-sm mt-3">
+                                    Logout
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="kt_aside" class="aside aside-light aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside"
+        data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+        data-kt-drawer-width="{default:'100px', '100px': '100px'}" data-kt-drawer-direction="start">
+        <img class="mt-2" style="margin-left:10px;" alt="logo" src="uploads/index.png" width="150px" height="50px">
+        <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle"
+            data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
+            data-kt-toggle-name="aside-minimize">
+        </div>
+        <div class="aside-menu flex-column-fluid">
+        <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true"
+                data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto"
+                data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu"
+                data-kt-scroll-offset="0">
+
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true">
+                    <div class="menu-item">
+
+                        <div class="menu-content pb-2">
+                            <span class="menu-section text-muted text-uppercase fs-8 ls-1">
+                                <h3 class="text-center">KAWM</h3>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link" href="/addproduct">
+                            <span class="menu-icon">
+
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <rect x="2" y="2" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="black" />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="menu-title">
+                                Product
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link" href="/adminproduct">
+                            <span class="menu-icon">
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <rect x="2" y="2" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2" fill="black" />
+                                        <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2" fill="black" />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="menu-title">View Products </span>
+                        </a>
+                    </div>
+                    <div style="background-color: grey;padding:5px;color:blue;" class="menu-item">
+                        <a class="menu-link" href="/viewuserenquiry">
+                            <span class="menu-icon">
+
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M8.9 21L7.19999 22.6999C6.79999 23.0999 6.2 23.0999 5.8 22.6999L4.1 21H8.9ZM4 16.0999L2.3 17.8C1.9 18.2 1.9 18.7999 2.3 19.1999L4 20.9V16.0999ZM19.3 9.1999L15.8 5.6999C15.4 5.2999 14.8 5.2999 14.4 5.6999L9 11.0999V21L19.3 10.6999C19.7 10.2999 19.7 9.5999 19.3 9.1999Z"
+                                            fill="black" />
+                                        <path
+                                            d="M21 15V20C21 20.6 20.6 21 20 21H11.8L18.8 14H20C20.6 14 21 14.4 21 15ZM10 21V4C10 3.4 9.6 3 9 3H4C3.4 3 3 3.4 3 4V21C3 21.6 3.4 22 4 22H9C9.6 22 10 21.6 10 21ZM7.5 18.5C7.5 19.1 7.1 19.5 6.5 19.5C5.9 19.5 5.5 19.1 5.5 18.5C5.5 17.9 5.9 17.5 6.5 17.5C7.1 17.5 7.5 17.9 7.5 18.5Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="menu-title">
+                                All User Enquiries
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link " href="/brochure">
+                            <span class="menu-icon">
+
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M21.25 18.525L13.05 21.825C12.35 22.125 11.65 22.125 10.95 21.825L2.75 18.525C1.75 18.125 1.75 16.725 2.75 16.325L4.04999 15.825L10.25 18.325C10.85 18.525 11.45 18.625 12.05 18.625C12.65 18.625 13.25 18.525 13.85 18.325L20.05 15.825L21.35 16.325C22.35 16.725 22.35 18.125 21.25 18.525ZM13.05 16.425L21.25 13.125C22.25 12.725 22.25 11.325 21.25 10.925L13.05 7.62502C12.35 7.32502 11.65 7.32502 10.95 7.62502L2.75 10.925C1.75 11.325 1.75 12.725 2.75 13.125L10.95 16.425C11.65 16.725 12.45 16.725 13.05 16.425Z"
+                                            fill="black" />
+                                        <path
+                                            d="M11.05 11.025L2.84998 7.725C1.84998 7.325 1.84998 5.925 2.84998 5.525L11.05 2.225C11.75 1.925 12.45 1.925 13.15 2.225L21.35 5.525C22.35 5.925 22.35 7.325 21.35 7.725L13.05 11.025C12.45 11.325 11.65 11.325 11.05 11.025Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="menu-title">
+                                Upload Brochure
+                            </span>
+                        </a>
+                    </div>
+                    <div class="menu-item">
+                        <a class="menu-link" href="/market">
+                            <span class="menu-icon">
+
+                                <span class="svg-icon svg-icon-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none">
+                                        <path opacity="0.3"
+                                            d="M20 21H3C2.4 21 2 20.6 2 20V10C2 9.4 2.4 9 3 9H20C20.6 9 21 9.4 21 10V20C21 20.6 20.6 21 20 21Z"
+                                            fill="black" />
+                                        <path
+                                            d="M20 7H3C2.4 7 2 6.6 2 6V3C2 2.4 2.4 2 3 2H20C20.6 2 21 2.4 21 3V6C21 6.6 20.6 7 20 7Z"
+                                            fill="black" />
+                                    </svg>
+                                </span>
+                            </span>
+                            <span class="menu-title">
+                                Upload Marketing
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<h1 class="text-center">You are Going to change the status of the User Status Enquiry </h1>
+    <div class="container" style="width: 700px;">
+        <div style="margin-top:10%;" id="myForm">
+
+            <form id="updatestatus" class="form-container">
+                <input type="hidden" name="name" value="<%=datas.name%>" id="name" class="form-control" />
+                <input type="hidden" name="mobile" value="<%=datas.mobile%>" id="mobile" class="form-control" />
+                <input type="hidden" name="id" value="<%= datas._id %>">
+                <label style="margin-top:15px;font-size:15px;font-weight: 500;"> Change Status of <input type="text"
+                        value="<%=datas.name%>" class="p-1" disabled="disabled"></label><br><br>
+                <input type="hidden" placeholder="status" id="status" name="status" value="<%= datas.status%>"
+                    class="form-control">
+                <br>
+                <select id="status" name="status" class="form-control">
+                    <option>Contacted</option>
+                    <option>In Progress</option>
+                    <option>Got the Bussiness</option>
+                    <option>Not Recieved the Order</option>
+            </div>
+        </select><br>
+            <button type="submit" class="btn btn-success btn-sm mt-4 form-control">update</button>
+            <button type="button" class="btn cancel btn-danger btn-sm mt-4 form-control"
+            onclick="closeform()">Close</button>
+        </form>
+    </div>
+    </div>
+</body>
+</html>
+<script src="js/index.js"></script>
